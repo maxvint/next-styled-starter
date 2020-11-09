@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Box } from 'rebass/styled-components'
 import { ArrowLeft } from 'react-feather'
 import Card from '../../components/Card'
+import LogoIcon from '../../assets/logo.svg'
 
 const name = 'StarWallet'
 
@@ -15,11 +16,28 @@ const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
-  height: 3rem;
+  padding: 0 1.5rem;
+  height: 4.5rem;
 `
 
-const HeaderLogo = styled(Link)``
+const LogoWrapper = styled.span`
+  display: flex;
+  font-size: 22px;
+  font-weight: 700;
+  color: ${({ theme }) => theme.text2};
+  text-decoration: none;
+  cursor: pointer;
+
+  > svg {
+    width: 2rem;
+    height: 2rem;
+  }
+`
+
+const LogoText = styled.span`
+  margin-left: .5rem;
+  color: ${({ theme }) => theme.primary1};
+`
 
 const HeaderSetting = styled.div``
 
@@ -32,6 +50,7 @@ const CardContainer = styled(Card)`
   margin: 0 auto;
   background-color: ${({ theme }) => theme.white};
   width: 50vw;
+  max-width: 500px;
 `
 
 const NavContainer = styled.div`
@@ -73,9 +92,12 @@ const BaseLayout = ({ title, children, home, onBack }: BaseProps) => {
   return (
     <LayoutContainer>
       <HeaderContainer>
-        <HeaderLogo href="/">
-          {name}
-        </HeaderLogo>
+        <Link href="/">
+          <LogoWrapper>
+            <LogoIcon />
+            <LogoText>{name}</LogoText>
+          </LogoWrapper>
+        </Link>
         <HeaderSetting>
           设置管理
         </HeaderSetting>

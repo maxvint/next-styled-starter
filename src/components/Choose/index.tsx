@@ -17,7 +17,7 @@ const WalletTitle = styled.h1`
 
 const ChooseCard = styled(Card)`
   margin: 0 auto;
-  padding: 10vh;
+  /* padding: 10vh; */
 `
 
 const ChooseWrapper = styled(Column)`

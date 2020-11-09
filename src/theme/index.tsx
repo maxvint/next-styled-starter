@@ -1,13 +1,12 @@
 import { transparentize } from 'polished'
 import React, { useMemo } from 'react'
-import styled, {
+import {
   ThemeProvider as StyledComponentsThemeProvider,
   createGlobalStyle,
   css,
   DefaultTheme
 } from 'styled-components'
 import { useIsDarkMode } from '../state/user/hooks'
-import { Text, TextProps } from 'rebass'
 import { Colors } from './styled'
 
 export * from './components'
@@ -124,6 +123,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
   return <StyledComponentsThemeProvider theme={themeObject}>{children}</StyledComponentsThemeProvider>
 }
 
+/*
 const TextWrapper = styled(Text)<{ color: keyof Colors }>`
   color: ${({ color, theme }) => (theme as any)[color]};
 `
@@ -169,6 +169,7 @@ export const TYPE = {
     return <TextWrapper fontWeight={500} color={error ? 'red1' : 'text2'} {...props} />
   }
 }
+*/
 
 export const FixedGlobalStyle = createGlobalStyle`
 html, input, textarea, button {

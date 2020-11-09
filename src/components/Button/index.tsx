@@ -1,10 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
-import { darken, lighten } from 'polished'
-
-import { RowBetween } from '../Row'
-import { ChevronDown } from 'react-feather'
-import { Button as RebassButton, ButtonProps } from 'rebass/styled-components'
+import { darken } from 'polished'
+import { Button as RebassButton } from 'rebass/styled-components'
 
 const Base = styled(RebassButton)<{
   padding?: string
@@ -45,10 +41,10 @@ export const ButtonPrimary = styled(Base)`
   color: white;
   &:focus {
     box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.05, theme.primary1)};
-    background-color: ${({ theme }) => darken(0.05, theme.primary1)};
+    background-color: ${({ theme, disabled }) => !disabled && darken(0.1, theme.primary1)};
   }
   &:hover {
-    background-color: ${({ theme }) => darken(0.05, theme.primary1)};
+    background-color: ${({ theme, disabled }) => !disabled && darken(0.1, theme.primary1)};
   }
   &:active {
     box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.1, theme.primary1)};
@@ -219,6 +215,7 @@ export const ButtonWhite = styled(Base)`
   }
 `
 
+/*
 const ButtonConfirmedStyle = styled(Base)`
   background-color: ${({ theme }) => lighten(0.5, theme.green1)};
   color: ${({ theme }) => theme.green1};
@@ -253,53 +250,4 @@ const ButtonErrorStyle = styled(Base)`
     border: 1px solid ${({ theme }) => theme.red1};
   }
 `
-
-export const ButtonConfirmed = ({
-  confirmed,
-  altDisabledStyle,
-  ...rest
-}: { confirmed?: boolean; altDisabledStyle?: boolean } & ButtonProps) => {
-  if (confirmed) {
-    return <ButtonConfirmedStyle {...rest} />
-  } else {
-    return <ButtonPrimary {...rest} altDisabledStyle={altDisabledStyle} />
-  }
-}
-
-export const ButtonError = ({ error, ...rest }: { error?: boolean } & ButtonProps) => {
-  if (error) {
-    return <ButtonErrorStyle {...rest} />
-  } else {
-    return <ButtonPrimary {...rest} />
-  }
-}
-
-export const ButtonDropdown = ({ disabled = false, children, ...rest }: { disabled?: boolean } & ButtonProps) => {
-  return (
-    <ButtonPrimary {...rest} disabled={disabled}>
-      <RowBetween>
-        <div style={{ display: 'flex', alignItems: 'center' }}>{children}</div>
-        <ChevronDown size={24} />
-      </RowBetween>
-    </ButtonPrimary>
-  )
-}
-
-export const ButtonDropdownLight = ({ disabled = false, children, ...rest }: { disabled?: boolean } & ButtonProps) => {
-  return (
-    <ButtonOutlined {...rest} disabled={disabled}>
-      <RowBetween>
-        <div style={{ display: 'flex', alignItems: 'center' }}>{children}</div>
-        <ChevronDown size={24} />
-      </RowBetween>
-    </ButtonOutlined>
-  )
-}
-
-export const ButtonRadio = ({ active, ...rest }: { active?: boolean } & ButtonProps) => {
-  if (!active) {
-    return <ButtonWhite {...rest} />
-  } else {
-    return <ButtonPrimary {...rest} />
-  }
-}
+*/

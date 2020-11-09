@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Box } from 'rebass/styled-components'
 import { Info } from 'react-feather'
 import { InputPrimary } from '../../components/Input'
-import { ButtonPrimary, ButtonLight } from '../../components/Button'
+import { ButtonPrimary } from '../../components/Button'
 
 
 const PasswordWrapper = styled.div`

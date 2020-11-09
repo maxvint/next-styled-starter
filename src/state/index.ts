@@ -1,12 +1,9 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
-import { save, load } from 'redux-localstorage-simple'
+import { configureStore } from '@reduxjs/toolkit'
 
 import storage from './storage/reducer'
 import user from './user/reducer'
 
 import { updateVersion } from './user/actions'
-
-const PERSISTED_KEYS: string[] = ['user']
 
 const store = configureStore({
   reducer: {

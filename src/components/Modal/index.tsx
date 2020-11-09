@@ -38,6 +38,7 @@ const StyledDialogContent = styled(({ minHeight, maxHeight, mobile, isOpen, ...r
     box-shadow: 0 4px 8px 0 ${({ theme }) => transparentize(0.95, theme.shadow1)};
     padding: 0px;
     width: 50vw;
+    max-width: 500px;
 
     align-self: ${({ mobile }) => (mobile ? 'flex-end' : 'center')};
 
@@ -84,7 +85,7 @@ const Modal = ({
   onDismiss,
   minHeight = false,
   maxHeight = 50,
-  initialFocusRef = null,
+  initialFocusRef = undefined,
   children
 }: ModalProps) => {
   const fadeTransition = useTransition(isOpen, null, {

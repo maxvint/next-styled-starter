@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { AppDispatch, AppState } from '../index'
+import { useDispatch } from 'react-redux'
+import { AppDispatch } from '../index'
 
 export default function Updater(): null {
-  const dispatch = useDispatch<AppDispatch>()
+  useDispatch<AppDispatch>()
   return null
 }
