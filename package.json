@@ -9,7 +9,9 @@
   "dependencies": {
     "@reach/dialog": "^0.11.2",
     "@rebass/forms": "^4.0.6",
+    "@rebass/preset": "^4.0.5",
     "@reduxjs/toolkit": "^1.4.0",
+    "emotion-theming": "^10.0.27",
     "next": "latest",
     "polished": "^4.0.3",
     "react": "^16.13.0",

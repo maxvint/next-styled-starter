@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import styled from 'styled-components'
 import { Box } from 'rebass/styled-components'
 import { ArrowLeft } from 'react-feather'
@@ -18,7 +19,7 @@ const HeaderContainer = styled.header`
   height: 3rem;
 `
 
-const HeaderLogo = styled.div``
+const HeaderLogo = styled(Link)``
 
 const HeaderSetting = styled.div``
 
@@ -38,6 +39,13 @@ const NavContainer = styled.div`
 
 const NavBackButton = styled.a`
   display: inline-flex;
+  width: 3rem;
+  height: 3rem;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: translateX(-4px);
+  }
 `
 
 const TitleContainer = styled.div`
@@ -58,14 +66,14 @@ interface BaseProps {
   title?: React.ReactNode | string
   children: React.ReactChild
   home?: boolean
-  onBack: () => void
+  onBack?: () => void
 }
 
 const BaseLayout = ({ title, children, home, onBack }: BaseProps) => {
   return (
     <LayoutContainer>
       <HeaderContainer>
-        <HeaderLogo>
+        <HeaderLogo href="/">
           {name}
         </HeaderLogo>
         <HeaderSetting>

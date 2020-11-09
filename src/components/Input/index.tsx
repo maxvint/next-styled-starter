@@ -1,25 +1,36 @@
 import styled from 'styled-components'
-import { Input as BaseInput } from '@rebass/forms'
 
-const Input = styled(BaseInput)<{ error?: boolean }>`
-  flex: 1 1 auto;
-  width: 0;
-  background-color: ${({ theme }) => theme.bg1};
-  transition: color 300ms ${({ error }) => (error ? 'step-end' : 'step-start')};
+export const InputPrimary = styled.input`
+  position: relative;
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  white-space: nowrap;
+  background: none;
   border: none;
   outline: none;
-  overflow: hidden;
-  color: ${({ error, theme }) => (error ? theme.red1 : theme.primary1)};
-  text-overflow: ellipsis;
-  font-size: 1.25rem;
-  font-weight: 500;
-  width: 100%;
+  border-radius: 5px;
+  color: ${({ theme }) => theme.text1};
+  border-width: 1px;
+  border-color: ${({ theme }) => theme.bg3};
+  border-style: solid;
+  -webkit-appearance: none;
+  font-size: 1rem;
+  transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+
+  :hover {
+    border-color: ${({ theme }) => theme.bg4};
+  }
+
+  :focus {
+    border-color: ${({ theme }) => theme.primary1};
+  }
 
   ::placeholder {
-    color: ${({ theme }) => theme.text4};
+    color: ${({ theme }) => theme.text3};
   }
-  padding: 0px;
-  -webkit-appearance: textfield;
 
   ::-webkit-search-decoration {
     -webkit-appearance: none;
@@ -34,5 +45,3 @@ const Input = styled(BaseInput)<{ error?: boolean }>`
     color: ${({ theme }) => theme.text4};
   }
 `
-
-export default Input
