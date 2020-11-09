@@ -1,28 +1,22 @@
-# TypeScript & Styled Components Next.js example
+# Star Wallet
 
-This is a really simple project that show the usage of Next.js with TypeScript and Styled Components.
+The Star Wallet is a [Filestar](https://filestar.net) web wallet built with Next.js that allows you to:
 
-## Deploy your own
+- **Send and Receive** Send and receive STAR.
+- **Create** Create wallet of STAR.
+- **Import** Accounts with seed phrases and private keys.
 
-Deploy the example using [Vercel](https://vercel.com):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-styled-components)
-
-## How to use it?
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
+### Install
 ```bash
-npx create-next-app --example with-typescript-styled-components with-typescript-app
-# or
-yarn create next-app --example with-typescript-styled-components with-typescript-app
+# dependencies
+yarn
+
+# dev
+yarn dev
+
+# build
+yarn build
+
+# start
+yarn start
 ```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-## Notes
-
-This is an amalgamation of the 2 existing examples:
-
-- [with-typescript](https://github.com/vercel/next.js/tree/canary/examples/with-typescript)
-- [with-styled-components](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components)
