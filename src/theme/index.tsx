@@ -172,63 +172,89 @@ export const TYPE = {
 */
 
 export const FixedGlobalStyle = createGlobalStyle`
-html, input, textarea, button {
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: -0.018em;
-  font-display: fallback;
-}
-/* @supports (font-variation-settings: normal) {
   html, input, textarea, button {
-    font-family: 'Inter var', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: -0.018em;
+    font-display: fallback;
   }
-} */
+  /* @supports (font-variation-settings: normal) {
+    html, input, textarea, button {
+      font-family: 'Inter var', sans-serif;
+    }
+  } */
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
 
-* {
-  box-sizing: border-box;
-}
+  * {
+    box-sizing: border-box;
+  }
 
-button {
-  user-select: none;
-}
+  button {
+    user-select: none;
+  }
 
-html {
-  font-size: 16px;
-  font-variant: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+  html {
+    font-size: 16px;
+    font-variant: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
 
-a {
-  cursor: pointer;
-}
+  a {
+    cursor: pointer;
+  }
 `
 
 export const ThemedGlobalStyle = createGlobalStyle`
-html {
-  color: ${({ theme }) => theme.text1};
-  background-color: ${({ theme }) => theme.bg2};
-}
+  @font-face {
+    font-family: 'iconfont';  /* project id 2280941 */
+    src: url('//at.alicdn.com/t/font_2280941_sbvjdz62uih.eot');
+    src: url('//at.alicdn.com/t/font_2280941_sbvjdz62uih.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_2280941_sbvjdz62uih.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_2280941_sbvjdz62uih.woff') format('woff'),
+    url('//at.alicdn.com/t/font_2280941_sbvjdz62uih.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_2280941_sbvjdz62uih.svg#iconfont') format('svg');
+  }
 
-body {
-  min-height: 100vh;
-  background-position: 0 -30vh;
-  background-repeat: no-repeat;
-  background-image: ${({ theme }) =>
-    `radial-gradient(50% 50% at 50% 50%, ${transparentize(0.9, theme.primary1)} 0%, ${transparentize(
-      1,
-      theme.bg1
-    )} 100%)`};
-}
+  .icon {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-h1,h2,h3,h4,h5,h6,p {
-  margin: 0;
-  padding: 0;
-}
+  .icon-weibo:before {
+    content: "\e641";
+  }
+
+  .icon-twitter:before {
+    content: "\e726";
+  }
+
+  html {
+    color: ${({ theme }) => theme.text1};
+    background-color: ${({ theme }) => theme.bg2};
+  }
+
+  body {
+    min-height: 100vh;
+    background-position: 0 -30vh;
+    background-repeat: no-repeat;
+    background-image: ${({ theme }) =>
+      `radial-gradient(50% 50% at 50% 50%, ${transparentize(0.9, theme.primary1)} 0%, ${transparentize(
+        1,
+        theme.bg1
+      )} 100%)`};
+  }
+
+  h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+    padding: 0;
+  }
 `

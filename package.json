@@ -10,6 +10,7 @@
     "@reach/dialog": "^0.11.2",
     "@rebass/forms": "^4.0.6",
     "@reduxjs/toolkit": "^1.4.0",
+    "@styled-icons/fa-brands": "^10.22.0",
     "next": "latest",
     "next-images": "^1.6.2",
     "polished": "^4.0.3",

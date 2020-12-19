@@ -1,10 +1,12 @@
 import BaseLayout from '../layouts/BaseLayout'
-import Choose from '../components/Choose'
+import Login from '../components/Login'
 
 const Home = () => {
   return (
     <BaseLayout home>
-      <Choose />
+      <>
+        <Login />  
+      </>
     </BaseLayout>
   )
 }

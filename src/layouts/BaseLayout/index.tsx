@@ -5,8 +5,7 @@ import { Box } from 'rebass/styled-components'
 import { ArrowLeft } from 'react-feather'
 import Card from '../../components/Card'
 import LogoIcon from '../../assets/logo.svg'
-
-const name = 'StarWallet'
+import { SITE_TITLE } from '../../const'
 
 const LayoutContainer = styled(Box)`
 
@@ -17,7 +16,8 @@ const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 0 1.5rem;
-  height: 4.5rem;
+  height: 3rem;
+  background-color: rgba(255, 255, 255, .6);
 `
 
 const LogoWrapper = styled.span`
@@ -36,7 +36,8 @@ const LogoWrapper = styled.span`
 
 const LogoText = styled.span`
   margin-left: .5rem;
-  color: ${({ theme }) => theme.primary1};
+  color: ${({ theme }) => theme.text1};
+  font-weight: 500;
 `
 
 const HeaderSetting = styled.div``
@@ -44,6 +45,7 @@ const HeaderSetting = styled.div``
 const MainContainer = styled.main`
   display: flex;
   flex-grow: 1;
+  margin-top: 1rem;
 `
 
 const CardContainer = styled(Card)`
@@ -95,7 +97,7 @@ const BaseLayout = ({ title, children, home, onBack }: BaseProps) => {
         <Link href="/">
           <LogoWrapper>
             <LogoIcon />
-            <LogoText>{name}</LogoText>
+            <LogoText>{SITE_TITLE}</LogoText>
           </LogoWrapper>
         </Link>
         <HeaderSetting>
@@ -120,7 +122,7 @@ const BaseLayout = ({ title, children, home, onBack }: BaseProps) => {
         </CardContainer>
       </MainContainer>
       <FooterContainer>
-        &copy; 2020 Fileguard All Rights Reserved.
+        &copy; 2020 CoinSummer All Rights Reserved.
       </FooterContainer>
     </LayoutContainer>
   )
