@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components'
 import { darken } from 'polished'
-import { ArrowLeft, X } from 'react-feather'
+import { AiOutlineArrowLeft, AiOutlineClose } from 'react-icons/ai'
 
 export const Button = styled.button.attrs<{ warning: boolean }, { backgroundColor: string }>(({ warning, theme }) => ({
   backgroundColor: warning ? theme.red1 : theme.primary1
@@ -34,7 +34,7 @@ export const Button = styled.button.attrs<{ warning: boolean }, { backgroundColo
   }
 `
 
-export const CloseIcon = styled(X)<{ onClick: () => void }>`
+export const CloseIcon = styled(AiOutlineClose)<{ onClick: () => void }>`
   cursor: pointer;
 `
 
@@ -130,7 +130,7 @@ const BackArrowLink = styled(StyledInternalLink)`
 export function BackArrow({ to }: { to: string }) {
   return (
     <BackArrowLink to={to}>
-      <ArrowLeft />
+      <AiOutlineArrowLeft />
     </BackArrowLink>
   )
 }

@@ -64,6 +64,8 @@ export const colors = (darkMode: boolean): Colors => {
     primary4: darkMode ? '#376bad70' : '#F6DDE8',
     primary5: darkMode ? '#153d6f70' : '#FDEAF1',
 
+    light1: darkMode ? '#333333' : '#00EBE9',
+
     // color text
     primaryText1: darkMode ? '#6da8ff' : '#ff007a',
 

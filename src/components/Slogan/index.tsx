@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react'
 import { Box } from 'rebass'
 import { Label, Checkbox } from '@rebass/forms'
 import styled, { ThemeContext } from 'styled-components'
-import { AlertCircle, Plus } from 'react-feather'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Card from '../Card'
@@ -14,9 +13,6 @@ import { SITE_TITLE } from '../../const'
 const SloganContainer = styled(Column)`
   margin: 0 auto;
   display: flex;
-  /* flex-direction: row; */
-  /* justify-content: center; */
-  /* padding: 10vh; */
 `
 
 const LogoWrapper = styled(Box)`
@@ -36,12 +32,12 @@ const LogoWrapper = styled(Box)`
 `
 
 const LogoText = styled.span`
-  margin-left: .5rem;
   color: ${({ theme }) => theme.text1};
   font-weight: 500;
 `
 
-const SloganText = styled(Box)`
+const SloganText = styled.p`
+  margin-top: 1rem;
   text-align: center;
   color: ${({ theme }) => theme.text3};
 `
@@ -68,7 +64,9 @@ const Slogan = () => {
         <LogoIcon />
         <LogoText>{SITE_TITLE}</LogoText>
       </LogoWrapper>
-      <SloganText>即刻备份您的重要Twitte、微博到Filecoin</SloganText>
+      <SloganText>
+        即刻保存您的重要Twitte、微博到Filecoin
+      </SloganText>
     </SloganContainer>
   )
 }

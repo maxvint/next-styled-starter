@@ -28,5 +28,5 @@ notes.txt
 .vscode/
 .next/
 
-package-lock.json
 yarn.lock
+package-lock.json

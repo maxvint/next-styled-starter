@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import { Box } from 'rebass/styled-components'
-import { ArrowLeft } from 'react-feather'
+import { AiOutlineArrowLeft } from 'react-icons/ai'
 import Card from '../../components/Card'
 import LogoIcon from '../../assets/logo.svg'
 import { SITE_TITLE } from '../../const'
@@ -81,7 +81,7 @@ const FooterContainer = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.875rem;
+  color: ${({ theme }) => theme.text3};
 `
 interface BaseProps {
   title?: React.ReactNode | string
@@ -109,7 +109,7 @@ const BaseLayout = ({ title, children, home, onBack }: BaseProps) => {
           <NavContainer>
             {!home && (
               <NavBackButton onClick={onBack}>
-                <ArrowLeft size={40} />
+                <AiOutlineArrowLeft size={40} />
               </NavBackButton>
             )}
           </NavContainer>
