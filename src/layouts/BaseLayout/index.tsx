@@ -1,26 +1,32 @@
+
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import { Box } from 'rebass/styled-components'
-import { AiOutlineArrowLeft } from 'react-icons/ai'
-import Card from '../../components/Card'
 import LogoIcon from '../../assets/logo.svg'
 import { SITE_TITLE } from '../../const'
 
-const LayoutContainer = styled(Box)`
-
+const LayoutContainer = styled.div`
+  margin: 0 auto;
+  padding-top: 3rem;
+  max-width: 1000px;
 `
 
 const HeaderContainer = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 1.5rem;
+  width: 100%;
+  min-width: auto;
   height: 3rem;
-  background-color: rgba(255, 255, 255, .6);
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 1000;
 `
 
-const LogoWrapper = styled.span`
+const LogoWrapper = styled.div`
   display: flex;
   font-size: 22px;
   font-weight: 700;
@@ -40,40 +46,15 @@ const LogoText = styled.span`
   font-weight: 500;
 `
 
-const HeaderSetting = styled.div``
+const HeaderSetting = styled.span`
+  cursor: pointer;
+`
 
 const MainContainer = styled.main`
+  position: relative;
   display: flex;
   flex-grow: 1;
   margin-top: 1rem;
-`
-
-const CardContainer = styled(Card)`
-  margin: 0 auto;
-  background-color: ${({ theme }) => theme.white};
-  width: 50vw;
-  max-width: 500px;
-`
-
-const NavContainer = styled.div`
-`
-
-const NavBackButton = styled.a`
-  display: inline-flex;
-  width: 3rem;
-  height: 3rem;
-  transition: all .2s ease-in-out;
-
-  &:hover {
-    transform: translateX(-4px);
-  }
-`
-
-const TitleContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
 `
 
 const FooterContainer = styled.footer`
@@ -83,14 +64,12 @@ const FooterContainer = styled.footer`
   justify-content: center;
   color: ${({ theme }) => theme.text3};
 `
+
 interface BaseProps {
-  title?: React.ReactNode | string
   children: React.ReactChild
-  home?: boolean
-  onBack?: () => void
 }
 
-const BaseLayout = ({ title, children, home, onBack }: BaseProps) => {
+const BaseLayout = ({ children }: BaseProps) => {
   return (
     <LayoutContainer>
       <HeaderContainer>
@@ -100,29 +79,17 @@ const BaseLayout = ({ title, children, home, onBack }: BaseProps) => {
             <LogoText>{SITE_TITLE}</LogoText>
           </LogoWrapper>
         </Link>
-        <HeaderSetting>
-          设置管理
-        </HeaderSetting>
+        <Link href="/settings">
+          <HeaderSetting>
+            设置管理
+          </HeaderSetting>
+        </Link>
       </HeaderContainer>
       <MainContainer>
-        <CardContainer>
-          <NavContainer>
-            {!home && (
-              <NavBackButton onClick={onBack}>
-                <AiOutlineArrowLeft size={40} />
-              </NavBackButton>
-            )}
-          </NavContainer>
-          {title && (
-            <TitleContainer>
-              {title}
-            </TitleContainer>
-          )}
-          {children}
-        </CardContainer>
+        {children}
       </MainContainer>
       <FooterContainer>
-        &copy; 2020 CoinSummer All Rights Reserved.
+        &copy; 2020 Fileguard All Rights Reserved.
       </FooterContainer>
     </LayoutContainer>
   )

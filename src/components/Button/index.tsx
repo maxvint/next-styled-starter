@@ -8,7 +8,7 @@ const Base = styled(RebassButton)<{
   borderRadius?: string
   altDisabledStyle?: boolean
 }>`
-  padding: ${({ padding }) => (padding ? padding : '18px')};
+  padding: ${({ padding }) => (padding ? padding : '.75rem')};
   width: ${({ width }) => (width ? width : '100%')};
   font-weight: 500;
   font-size: 1rem;
@@ -193,19 +193,13 @@ export const ButtonEmpty = styled(Base)`
 `
 
 export const ButtonWhite = styled(Base)`
-  border: 1px solid #edeef2;
   background-color: ${({ theme }) => theme.bg1};
   color: black;
 
-  &:focus {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    box-shadow: 0 0 0 1pt ${darken(0.05, '#edeef2')};
-  }
-  &:hover {
-    box-shadow: 0 0 0 1pt ${darken(0.1, '#edeef2')};
-  }
+  &:focus,
+  &:hover,
   &:active {
-    box-shadow: 0 0 0 1pt ${darken(0.1, '#edeef2')};
+    box-shadow: 0 5px 10px 0 ${darken(0.03, '#edeef2')};
   }
   &:disabled {
     opacity: 50%;

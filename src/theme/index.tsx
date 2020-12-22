@@ -4,6 +4,7 @@ import {
   ThemeProvider as StyledComponentsThemeProvider,
   createGlobalStyle,
   css,
+  keyframes,
   DefaultTheme
 } from 'styled-components'
 import { useIsDarkMode } from '../state/user/hooks'
@@ -80,10 +81,6 @@ export const colors = (darkMode: boolean): Colors => {
     green1: '#27AE60',
     yellow1: '#FFE270',
     yellow2: '#F3841E'
-
-    // dont wanna forget these blue yet
-    // blue4: darkMode ? '#153d6f70' : '#C4D9F8',
-    // blue5: darkMode ? '#153d6f70' : '#EBF4FF',
   }
 }
 
@@ -209,36 +206,11 @@ export const FixedGlobalStyle = createGlobalStyle`
 
   a {
     cursor: pointer;
+    user-select: none;
   }
 `
 
 export const ThemedGlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'iconfont';  /* project id 2280941 */
-    src: url('//at.alicdn.com/t/font_2280941_sbvjdz62uih.eot');
-    src: url('//at.alicdn.com/t/font_2280941_sbvjdz62uih.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_2280941_sbvjdz62uih.woff2') format('woff2'),
-    url('//at.alicdn.com/t/font_2280941_sbvjdz62uih.woff') format('woff'),
-    url('//at.alicdn.com/t/font_2280941_sbvjdz62uih.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_2280941_sbvjdz62uih.svg#iconfont') format('svg');
-  }
-
-  .icon {
-    font-family: "iconfont" !important;
-    font-size: 16px;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  .icon-weibo:before {
-    content: "\e641";
-  }
-
-  .icon-twitter:before {
-    content: "\e726";
-  }
-
   html {
     color: ${({ theme }) => theme.text1};
     background-color: ${({ theme }) => theme.bg2};

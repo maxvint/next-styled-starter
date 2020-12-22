@@ -1,12 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { Box } from 'rebass'
-import { Label, Checkbox } from '@rebass/forms'
 import styled, { ThemeContext } from 'styled-components'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
-import Card from '../Card'
 import Column from '../Column'
-import Row from '../Row'
 import LogoIcon from '../../assets/logo.svg'
 import { SITE_TITLE } from '../../const'
 
@@ -47,16 +43,6 @@ const Slogan = () => {
   const [modalOpen, setModalOpen] = useState<boolean>(false)
   const [actionType, setActionType] = useState<string>('create')
   const router = useRouter()
-
-  const handleAgreementVisible = (option: string) => {
-    setModalOpen(true)
-    setActionType(option)
-  }
-
-  const handleAgreementConfirm = () => {
-    setModalOpen(false)
-    router.push(actionType)
-  }
 
   return (
     <SloganContainer>

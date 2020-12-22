@@ -1,14 +1,14 @@
-import BaseLayout from '../layouts/BaseLayout'
+import CardLayout from '../layouts/CardLayout'
 import Login from '../components/Login'
 
-const Home = () => {
+const IndexPage = () => {
   return (
-    <BaseLayout home>
+    <CardLayout>
       <>
         <Login />  
       </>
-    </BaseLayout>
+    </CardLayout>
   )
 }
 
-export default Home
+export default IndexPage
