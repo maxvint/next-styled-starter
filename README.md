@@ -1,5 +1,7 @@
-# Filevault
-Store user's social media data on Filecoin through a decentralized, safe and private storage methods.
+# Nest styled starter
+
+![Light mode](./screenshot/light-mode.png)
+![Dark mode](./screenshot/dark-mode.png)
 
 ### Install
 ```bash
