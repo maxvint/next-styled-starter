@@ -4,7 +4,6 @@ import {
   ThemeProvider as StyledComponentsThemeProvider,
   createGlobalStyle,
   css,
-  keyframes,
   DefaultTheme
 } from 'styled-components'
 import { useIsDarkMode } from '../state/user/hooks'
@@ -48,7 +47,7 @@ export const colors = (darkMode: boolean): Colors => {
     text5: darkMode ? '#2C2F36' : '#EDEEF2',
 
     // backgrounds / greys
-    bg1: darkMode ? '#212429' : '#FFFFFF',
+    bg1: darkMode ? '#070A21' : '#FFFFFF',
     bg2: darkMode ? '#2C2F36' : '#F7F8FA',
     bg3: darkMode ? '#40444F' : '#EDEEF2',
     bg4: darkMode ? '#565A69' : '#CED0D9',
@@ -56,31 +55,29 @@ export const colors = (darkMode: boolean): Colors => {
 
     //specialty colors
     modalBG: darkMode ? 'rgba(0, 0, 0, .5)' : 'rgba(0, 0, 0, .5)',
-    advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.6)',
+    advancedBG: darkMode ? 'rgba(0, 0, 0, .9)' : 'rgba(244, 244, 244, .9)',
 
     //primary colors
-    primary1: darkMode ? '#2172E5' : '#2130ff',
+    primary1: darkMode ? '#2130ff' : '#2130ff',
     primary2: darkMode ? '#3680E7' : '#FF8CC3',
     primary3: darkMode ? '#4D8FEA' : '#FF99C9',
     primary4: darkMode ? '#376bad70' : '#F6DDE8',
     primary5: darkMode ? '#153d6f70' : '#FDEAF1',
 
-    light1: darkMode ? '#333333' : '#00EBE9',
+    light1: darkMode ? '#01EBE9' : '#00EBE9',
 
     // color text
-    primaryText1: darkMode ? '#6da8ff' : '#ff007a',
+    primaryText1: darkMode ? '#043BDE' : '#ff007a',
 
     // secondary colors
-    secondary1: darkMode ? '#2172E5' : '#ff007a',
+    secondary1: darkMode ? '#ff007a' : '#ff007a',
     secondary2: darkMode ? '#17000b26' : '#F6DDE8',
     secondary3: darkMode ? '#17000b26' : '#FDEAF1',
 
     // other
-    red1: '#FF6871',
-    red2: '#F82D3A',
-    green1: '#27AE60',
-    yellow1: '#FFE270',
-    yellow2: '#F3841E'
+    red: '#FF6871',
+    green: '#27AE60',
+    yellow: '#F3841E'
   }
 }
 

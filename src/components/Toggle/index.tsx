@@ -24,17 +24,24 @@ const StyledToggle = styled.a<{ isActive?: boolean; activeElement?: boolean }>`
 
 export interface ToggleProps {
   isActive: boolean
+  activeText?: string
+  inactiveText?: string
   toggle: () => void
 }
 
-const Toggle = ({ isActive, toggle }: ToggleProps) => {
+const Toggle = ({
+  isActive,
+  activeText,
+  inactiveText,
+  toggle
+}: ToggleProps) => {
   return (
     <StyledToggle isActive={isActive} target="_self" onClick={toggle}>
       <ToggleElement isActive={isActive} isOnSwitch={true}>
-        On
+        {activeText ? activeText : 'On'}
       </ToggleElement>
       <ToggleElement isActive={!isActive} isOnSwitch={false}>
-        Off
+        {inactiveText ? inactiveText : 'Off'}
       </ToggleElement>
     </StyledToggle>
   )

@@ -1,1 +1,1 @@
-export const SITE_TITLE = 'FileVault'
+export const SITE_TITLE = 'Next Styled Starter'

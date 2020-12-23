@@ -1,14 +1,14 @@
 
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import LogoIcon from '../../assets/logo.svg'
 import { SITE_TITLE } from '../../const'
+import Row from '../../components/Row'
+import Settings from '../../components/Settings'
 
 const LayoutContainer = styled.div`
   margin: 0 auto;
-  padding-top: 3rem;
-  max-width: 1000px;
+  padding: 3rem .5rem;
 `
 
 const HeaderContainer = styled.header`
@@ -22,7 +22,7 @@ const HeaderContainer = styled.header`
   width: 100%;
   min-width: auto;
   height: 3rem;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: ${({ theme }) => theme.bg1};
   z-index: 1000;
 `
 
@@ -41,13 +41,18 @@ const LogoWrapper = styled.div`
 `
 
 const LogoText = styled.span`
-  margin-left: .5rem;
   color: ${({ theme }) => theme.text1};
   font-weight: 500;
 `
 
-const HeaderSetting = styled.span`
+const HeaderSetting = styled(Row)`
+  width: auto;
   cursor: pointer;
+
+  > span {
+    margin-right: .5rem;
+    color: ${({ theme }) => theme.text3};
+  }
 `
 
 const MainContainer = styled.main`
@@ -75,15 +80,12 @@ const BaseLayout = ({ children }: BaseProps) => {
       <HeaderContainer>
         <Link href="/">
           <LogoWrapper>
-            <LogoIcon />
             <LogoText>{SITE_TITLE}</LogoText>
           </LogoWrapper>
         </Link>
-        <Link href="/settings">
-          <HeaderSetting>
-            设置管理
-          </HeaderSetting>
-        </Link>
+        <HeaderSetting>
+          <Settings />
+        </HeaderSetting>
       </HeaderContainer>
       <MainContainer>
         {children}

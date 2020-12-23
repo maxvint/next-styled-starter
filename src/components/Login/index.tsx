@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import Card from '../Card'
 import Column from '../Column'
 import Row from '../Row'
-import { ButtonPrimary, ButtonLight, ButtonWhite } from '../Button'
+import { ButtonWhite } from '../Button'
 import Slogan from '../Slogan'
 
 const LoginCard = styled(Card)`
