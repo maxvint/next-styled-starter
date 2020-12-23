@@ -86,6 +86,7 @@ export const ButtonSecondary = styled(Base)`
 `
 
 export const ButtonOutlined = styled(Base)`
+  padding: calc(.75rem - 1px);
   border: 1px solid ${({ theme }) => theme.bg3};
   background-color: transparent;
   color: ${({ theme }) => theme.text2};

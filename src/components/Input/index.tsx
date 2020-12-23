@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { transparentize } from 'polished'
 
-export const InputPrimary = styled.input<{
+export const InputPrimary = styled.input < {
   padding?: string
-  state?: 'success' | 'error' | 'warning'
+  state?: 'default' | 'success' | 'error' | 'warning'
 }>`
   position: relative;
   display: flex;
@@ -17,7 +17,12 @@ export const InputPrimary = styled.input<{
   border-radius: .5rem;
   color: ${({ theme }) => theme.text1};
   border-width: 1px;
-  border-color: ${({ theme, state }) => (state === 'success' && transparentize(0.4, theme.green)) || (state === 'error' && transparentize(0.4, theme.red)) || (state === 'warning' && transparentize(0.4, theme.yellow)) || theme.bg3};
+  border-color: ${({ theme, state }) => (
+    state === 'success' && transparentize(0.4, theme.green)) ||
+    (state === 'error' && transparentize(0.4, theme.red)) ||
+    (state === 'warning' && transparentize(0.4, theme.yellow)) ||
+    theme.bg3
+  };
   border-style: solid;
   -webkit-appearance: none;
   font-size: 1rem;
@@ -31,15 +36,6 @@ export const InputPrimary = styled.input<{
       (state === 'warning' && transparentize(0.4, theme.yellow)) ||
       transparentize(0.4, theme.primary1)
       ) : 'none'};
-  }
-
-  :focus {
-    box-shadow: 0 0 0 2px ${({ theme, state, disabled }) => !disabled ? (
-      (state === 'success' && transparentize(0.8, theme.green)) ||
-      (state === 'error' && transparentize(0.8, theme.red)) ||
-      (state === 'warning' && transparentize(0.8, theme.yellow)) ||
-      transparentize(0.8, theme.primary1)
-    ) : 'none'};
   }
 
   &:disabled {
@@ -62,5 +58,16 @@ export const InputPrimary = styled.input<{
 
   ::placeholder {
     color: ${({ theme }) => theme.text4};
+  }
+`
+
+export const InputShadowed = styled(InputPrimary)`
+  :focus {
+    box-shadow: 0 0 0 2px ${({ theme, state, disabled }) => !disabled ? (
+      (state === 'success' && transparentize(0.8, theme.green)) ||
+      (state === 'error' && transparentize(0.8, theme.red)) ||
+      (state === 'warning' && transparentize(0.8, theme.yellow)) ||
+      transparentize(0.8, theme.primary1)
+    ) : 'none'};
   }
 `

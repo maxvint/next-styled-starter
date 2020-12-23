@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import Card from '../components/Card'
 import { ButtonPrimary, ButtonDefault, ButtonSecondary, ButtonOutlined, ButtonEmpty } from '../components/Button'
-import { InputPrimary } from '../components/Input'
+import { InputPrimary, InputShadowed } from '../components/Input'
 import Loader from '../components/Loader'
 import Toggle from '../components/Toggle'
 import Tooltip from '../components/Tooltip'
@@ -79,10 +79,14 @@ const IndexPage = () => {
         <InputContainer>
           <CardInner>
             <CardTitle>Input</CardTitle>
-            <InputPrimary placeholder="Please type" />
+            <InputPrimary state="default" placeholder="Default state" />
             <InputPrimary state="success" placeholder="Success state" />
             <InputPrimary state="error" placeholder="Error state" />
             <InputPrimary state="warning" placeholder="Warning state" />
+            <InputShadowed state="default" placeholder="Shadowed input with default state" />
+            <InputShadowed state="success" placeholder="Shadowed input with success state" />
+            <InputShadowed state="error" placeholder="Shadowed input with error state" />
+            <InputShadowed state="warning" placeholder="Shadowed input with warning state" />
             <InputPrimary disabled={true} placeholder="Disabled" />
           </CardInner>
         </InputContainer>
